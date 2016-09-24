@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor (){
     super()
     this.state={
-      show:false
+      show:false,
+      title:"home"
     }
   }
   set(){
@@ -19,10 +20,25 @@ class App extends React.Component {
     this.set()
     window.onresize= this.set.bind(this)
   }
+  setTitle(){
+    this.setState({
+      title:this.context.router.isActive('/',true) ? "Home" :
+            this.context.router.isActive('/blog') ? "Blog" :
+            this.context.router.isActive('/work') ? "Work" :
+            this.context.router.isActive('/about') ? "About" : 'item'
+
+    })
+  }
+  componentWillReceiveProps(){
+        this.setTitle()
+  }
+  componentWillMount(){
+    this.setTitle();
+  }
   render () {
     return(
       <div className="content">
-        {this.state.show ? <Navbar  /> :<Header />}
+        {this.state.show ? <Navbar  title={this.state.title}/> :<Header title={this.state.title}/>}
 
 
         <div className="content-main">
@@ -33,5 +49,7 @@ class App extends React.Component {
     )
   }
 }
-
+App.contextTypes={
+  router:React.PropTypes.object
+}
 export default App;

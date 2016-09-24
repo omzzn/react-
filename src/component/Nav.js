@@ -9,7 +9,7 @@ class Nav extends React.Component {
      return(
     <div>
       <div className='sideNav'>
-        <h3>Hello World</h3>
+        <h3>Kobe_{this.props.title}</h3>
         <Link to="/" activeStyle={{color:"#283593"}} onlyActiveOnIndex={true}>
         <span className="glyphicon glyphicon-home"></span>
         Home</Link>
@@ -21,7 +21,7 @@ class Nav extends React.Component {
         Blog</Link>
         <Link to="/work" activeStyle={{color:"#283593"}}>
         <span className="glyphicon glyphicon-search"></span>
-        Work</Link>
+        Honor</Link>
 
       </div>
     </div>

@@ -15,8 +15,8 @@ class Footer extends React.Component {
             <span className="glyphicon glyphicon-book"></span><br/>
             Blog</Link>
             <Link to="/work" activeStyle={{color:"#283593"}}>
-            <span className="glyphicon glyphicon-search"></span><br/>
-            Work</Link>
+            <span className="glyphicon glyphicon-asterisk"></span><br/>
+            Honor</Link>
         </div>
       )
   }

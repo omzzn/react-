@@ -5,6 +5,7 @@ import Work from './Work.js';
 import Blog from './Blog.js';
 import Home from './Home.js';
 import About from './About.js';
+import Person from './person.js'
 class Routers extends React.Component {
   render () {
        return(
@@ -14,6 +15,7 @@ class Routers extends React.Component {
                 <Route path='/about' component={About} />
                 <Route path='/work' component={Work} />
                 <Route path='/blog' component={Blog} />
+                <Route path='/person/:title' component={Person} />
             </Route>
          </Router>
        )
